@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.toss.cashback.infrastructure.api.RetryBackoffPolicyHiddenTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-09-09T14:06:01.088Z" hostname="DESKTOP-KCPM44A" time="0.024">
+  <properties/>
+  <testcase name="saturatesInsteadOfOverflowing()" classname="com.toss.cashback.infrastructure.api.RetryBackoffPolicyHiddenTest" time="0.016"/>
+  <testcase name="rejectsInvalidArguments()" classname="com.toss.cashback.infrastructure.api.RetryBackoffPolicyHiddenTest" time="0.002"/>
+  <testcase name="acceptsEqualInitialAndMaximum()" classname="com.toss.cashback.infrastructure.api.RetryBackoffPolicyHiddenTest" time="0.0"/>
+  <testcase name="computesOneBasedExponentialDelay()" classname="com.toss.cashback.infrastructure.api.RetryBackoffPolicyHiddenTest" time="0.0"/>
+  <testcase name="handlesHugeAttemptEfficiently()" classname="com.toss.cashback.infrastructure.api.RetryBackoffPolicyHiddenTest" time="0.0"/>
+  <testcase name="capsAtMaximum()" classname="com.toss.cashback.infrastructure.api.RetryBackoffPolicyHiddenTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

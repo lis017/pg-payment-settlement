@@ -1,0 +1,33 @@
+{
+  "taskId": "PG-EXAMPLE-001",
+  "objective": "결제 조회 응답 문서를 보강한다.",
+  "acceptanceCriteria": [
+    "결제 상태와 정산 상태의 의미가 README에 구분되어 있다."
+  ],
+  "evidence": [
+    "src/main/java/com/toss/cashback/domain/payment/dto/response/PaymentQueryResponse.java",
+    "README.md"
+  ],
+  "allowedPaths": [
+    "README.md"
+  ],
+  "forbiddenPaths": [
+    "src/main/**",
+    "src/test/**",
+    "build.gradle",
+    "docker-compose.yml"
+  ],
+  "dbImpact": "없음",
+  "apiImpact": "없음",
+  "risks": [
+    "문서가 실제 응답 모델과 달라질 수 있음"
+  ],
+  "tests": [
+    ".\\gradlew.bat --no-daemon test"
+  ],
+  "nonGoals": [
+    "애플리케이션 코드 수정",
+    "API 응답 필드 변경"
+  ],
+  "rollback": "README.md 변경분만 되돌린다."
+}

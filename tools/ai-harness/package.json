@@ -1,0 +1,12 @@
+{
+  "name": "pg-ai-harness",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "benchmark": "node src/benchmark.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

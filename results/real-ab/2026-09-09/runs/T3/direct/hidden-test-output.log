@@ -1,0 +1,157 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.4/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :compileJava
+> Task :processResources
+> Task :classes
+
+> Task :compileTestJava
+
+> Task :compileTestJava FAILED
+
+[Incubating] Problems report is available at: file:///C:/Users/user/Desktop/pg-payment-settlement-master/.real-ab-workspaces-4f2ZIN/T3/direct/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.4/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+3 actionable tasks: 3 executed
+
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T3\direct\src\test\java\com\toss\cashback\domain\payment\service\IdempotencyKeyNormalizerHiddenTest.java:10: error: cannot find symbol
+                IdempotencyKeyNormalizer.normalize("  550E8400-E29B-41D4-A716-446655440000  "));
+                ^
+  symbol:   variable IdempotencyKeyNormalizer
+  location: class IdempotencyKeyNormalizerHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T3\direct\src\test\java\com\toss\cashback\domain\payment\service\IdempotencyKeyNormalizerHiddenTest.java:14: error: cannot find symbol
+        assertEquals('1', IdempotencyKeyNormalizer.normalize("550e8400-e29b-11d4-a716-446655440000").charAt(14));
+                          ^
+  symbol:   variable IdempotencyKeyNormalizer
+  location: class IdempotencyKeyNormalizerHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T3\direct\src\test\java\com\toss\cashback\domain\payment\service\IdempotencyKeyNormalizerHiddenTest.java:15: error: cannot find symbol
+        assertEquals('5', IdempotencyKeyNormalizer.normalize("550e8400-e29b-51d4-a716-446655440000").charAt(14));
+                          ^
+  symbol:   variable IdempotencyKeyNormalizer
+  location: class IdempotencyKeyNormalizerHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T3\direct\src\test\java\com\toss\cashback\domain\payment\service\IdempotencyKeyNormalizerHiddenTest.java:19: error: cannot find symbol
+        assertThrows(IllegalArgumentException.class, () -> IdempotencyKeyNormalizer.normalize(null));
+                                                           ^
+  symbol:   variable IdempotencyKeyNormalizer
+  location: class IdempotencyKeyNormalizerHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T3\direct\src\test\java\com\toss\cashback\domain\payment\service\IdempotencyKeyNormalizerHiddenTest.java:20: error: cannot find symbol
+        assertThrows(IllegalArgumentException.class, () -> IdempotencyKeyNormalizer.normalize("  "));
+                                                           ^
+  symbol:   variable IdempotencyKeyNormalizer
+  location: class IdempotencyKeyNormalizerHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T3\direct\src\test\java\com\toss\cashback\domain\payment\service\IdempotencyKeyNormalizerHiddenTest.java:24: error: cannot find symbol
+        assertThrows(IllegalArgumentException.class, () -> IdempotencyKeyNormalizer.normalize("{550e8400-e29b-41d4-a716-446655440000}"));
+                                                           ^
+  symbol:   variable IdempotencyKeyNormalizer
+  location: class IdempotencyKeyNormalizerHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T3\direct\src\test\java\com\toss\cashback\domain\payment\service\IdempotencyKeyNormalizerHiddenTest.java:25: error: cannot find symbol
+        assertThrows(IllegalArgumentException.class, () -> IdempotencyKeyNormalizer.normalize("550e8400e29b41d4a716446655440000"));
+                                                           ^
+  symbol:   variable IdempotencyKeyNormalizer
+  location: class IdempotencyKeyNormalizerHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T3\direct\src\test\java\com\toss\cashback\domain\payment\service\IdempotencyKeyNormalizerHiddenTest.java:26: error: cannot find symbol
+        assertThrows(IllegalArgumentException.class, () -> IdempotencyKeyNormalizer.normalize("1-1-1-1-1"));
+                                                           ^
+  symbol:   variable IdempotencyKeyNormalizer
+  location: class IdempotencyKeyNormalizerHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T3\direct\src\test\java\com\toss\cashback\domain\payment\service\IdempotencyKeyNormalizerHiddenTest.java:30: error: cannot find symbol
+        assertThrows(IllegalArgumentException.class, () -> IdempotencyKeyNormalizer.normalize("550e8400-e29b-41d4-a716-446655440000x"));
+                                                           ^
+  symbol:   variable IdempotencyKeyNormalizer
+  location: class IdempotencyKeyNormalizerHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T3\direct\src\test\java\com\toss\cashback\domain\payment\service\IdempotencyKeyNormalizerHiddenTest.java:34: error: cannot find symbol
+        assertThrows(IllegalArgumentException.class, () -> IdempotencyKeyNormalizer.normalize("550e8400-e29b-01d4-a716-446655440000"));
+                                                           ^
+  symbol:   variable IdempotencyKeyNormalizer
+  location: class IdempotencyKeyNormalizerHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T3\direct\src\test\java\com\toss\cashback\domain\payment\service\IdempotencyKeyNormalizerHiddenTest.java:35: error: cannot find symbol
+        assertThrows(IllegalArgumentException.class, () -> IdempotencyKeyNormalizer.normalize("550e8400-e29b-61d4-a716-446655440000"));
+                                                           ^
+  symbol:   variable IdempotencyKeyNormalizer
+  location: class IdempotencyKeyNormalizerHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T3\direct\src\test\java\com\toss\cashback\domain\payment\service\IdempotencyKeyNormalizerHiddenTest.java:39: error: cannot find symbol
+        assertThrows(IllegalArgumentException.class, () -> IdempotencyKeyNormalizer.normalize("550e8400-e29b-41d4-7716-446655440000"));
+                                                           ^
+  symbol:   variable IdempotencyKeyNormalizer
+  location: class IdempotencyKeyNormalizerHiddenTest
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+12 errors
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileTestJava'.
+> Compilation failed; see the compiler output below.
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T3\direct\src\test\java\com\toss\cashback\domain\payment\service\IdempotencyKeyNormalizerHiddenTest.java:10: error: cannot find symbol
+                  IdempotencyKeyNormalizer.normalize("  550E8400-E29B-41D4-A716-446655440000  "));
+                  ^
+    symbol:   variable IdempotencyKeyNormalizer
+    location: class IdempotencyKeyNormalizerHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T3\direct\src\test\java\com\toss\cashback\domain\payment\service\IdempotencyKeyNormalizerHiddenTest.java:14: error: cannot find symbol
+          assertEquals('1', IdempotencyKeyNormalizer.normalize("550e8400-e29b-11d4-a716-446655440000").charAt(14));
+                            ^
+    symbol:   variable IdempotencyKeyNormalizer
+    location: class IdempotencyKeyNormalizerHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T3\direct\src\test\java\com\toss\cashback\domain\payment\service\IdempotencyKeyNormalizerHiddenTest.java:15: error: cannot find symbol
+          assertEquals('5', IdempotencyKeyNormalizer.normalize("550e8400-e29b-51d4-a716-446655440000").charAt(14));
+                            ^
+    symbol:   variable IdempotencyKeyNormalizer
+    location: class IdempotencyKeyNormalizerHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T3\direct\src\test\java\com\toss\cashback\domain\payment\service\IdempotencyKeyNormalizerHiddenTest.java:19: error: cannot find symbol
+          assertThrows(IllegalArgumentException.class, () -> IdempotencyKeyNormalizer.normalize(null));
+                                                             ^
+    symbol:   variable IdempotencyKeyNormalizer
+    location: class IdempotencyKeyNormalizerHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T3\direct\src\test\java\com\toss\cashback\domain\payment\service\IdempotencyKeyNormalizerHiddenTest.java:20: error: cannot find symbol
+          assertThrows(IllegalArgumentException.class, () -> IdempotencyKeyNormalizer.normalize("  "));
+                                                             ^
+    symbol:   variable IdempotencyKeyNormalizer
+    location: class IdempotencyKeyNormalizerHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T3\direct\src\test\java\com\toss\cashback\domain\payment\service\IdempotencyKeyNormalizerHiddenTest.java:24: error: cannot find symbol
+          assertThrows(IllegalArgumentException.class, () -> IdempotencyKeyNormalizer.normalize("{550e8400-e29b-41d4-a716-446655440000}"));
+                                                             ^
+    symbol:   variable IdempotencyKeyNormalizer
+    location: class IdempotencyKeyNormalizerHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T3\direct\src\test\java\com\toss\cashback\domain\payment\service\IdempotencyKeyNormalizerHiddenTest.java:25: error: cannot find symbol
+          assertThrows(IllegalArgumentException.class, () -> IdempotencyKeyNormalizer.normalize("550e8400e29b41d4a716446655440000"));
+                                                             ^
+    symbol:   variable IdempotencyKeyNormalizer
+    location: class IdempotencyKeyNormalizerHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T3\direct\src\test\java\com\toss\cashback\domain\payment\service\IdempotencyKeyNormalizerHiddenTest.java:26: error: cannot find symbol
+          assertThrows(IllegalArgumentException.class, () -> IdempotencyKeyNormalizer.normalize("1-1-1-1-1"));
+                                                             ^
+    symbol:   variable IdempotencyKeyNormalizer
+    location: class IdempotencyKeyNormalizerHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T3\direct\src\test\java\com\toss\cashback\domain\payment\service\IdempotencyKeyNormalizerHiddenTest.java:30: error: cannot find symbol
+          assertThrows(IllegalArgumentException.class, () -> IdempotencyKeyNormalizer.normalize("550e8400-e29b-41d4-a716-446655440000x"));
+                                                             ^
+    symbol:   variable IdempotencyKeyNormalizer
+    location: class IdempotencyKeyNormalizerHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T3\direct\src\test\java\com\toss\cashback\domain\payment\service\IdempotencyKeyNormalizerHiddenTest.java:34: error: cannot find symbol
+          assertThrows(IllegalArgumentException.class, () -> IdempotencyKeyNormalizer.normalize("550e8400-e29b-01d4-a716-446655440000"));
+                                                             ^
+    symbol:   variable IdempotencyKeyNormalizer
+    location: class IdempotencyKeyNormalizerHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T3\direct\src\test\java\com\toss\cashback\domain\payment\service\IdempotencyKeyNormalizerHiddenTest.java:35: error: cannot find symbol
+          assertThrows(IllegalArgumentException.class, () -> IdempotencyKeyNormalizer.normalize("550e8400-e29b-61d4-a716-446655440000"));
+                                                             ^
+    symbol:   variable IdempotencyKeyNormalizer
+    location: class IdempotencyKeyNormalizerHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T3\direct\src\test\java\com\toss\cashback\domain\payment\service\IdempotencyKeyNormalizerHiddenTest.java:39: error: cannot find symbol
+          assertThrows(IllegalArgumentException.class, () -> IdempotencyKeyNormalizer.normalize("550e8400-e29b-41d4-7716-446655440000"));
+                                                             ^
+    symbol:   variable IdempotencyKeyNormalizer
+    location: class IdempotencyKeyNormalizerHiddenTest
+  Note: Recompile with -Xlint:unchecked for details.
+  Note: Some input files use unchecked or unsafe operations.
+  12 errors
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights.
+
+BUILD FAILED in 15s

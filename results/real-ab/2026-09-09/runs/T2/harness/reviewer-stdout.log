@@ -1,0 +1,5 @@
+{"type":"thread.started","thread_id":"01a0867c-d004-7de1-996c-22e54966bc77"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"summary\":\"지정된 대상 파일과 변경 범위를 읽기 전용으로 점검하겠습니다.\",\"findings\":[]}"}}
+{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":"{\"summary\":\"검토 대상 파일을 읽기 위한 로컬 명령 실행이 환경 정책에 의해 차단되어 구현을 검증할 수 없습니다.\",\"findings\":[]}"}}
+{"type":"turn.completed","usage":{"input_tokens":69155,"cached_input_tokens":52224,"cache_write_input_tokens":0,"output_tokens":614,"reasoning_output_tokens":156}}

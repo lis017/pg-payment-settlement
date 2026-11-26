@@ -1,0 +1,7 @@
+구현 완료했습니다.
+
+- 추가 파일: [RetryBackoffPolicy.java](C:/Users/user/Desktop/pg-payment-settlement-master/.real-ab-workspaces-0I0fts/T2/direct/src/main/java/com/toss/cashback/global/util/RetryBackoffPolicy.java)
+- 입력값 검증 및 `IllegalArgumentException` 처리
+- 정수 연산만 사용
+- `Long.MAX_VALUE` 경계와 큰 attempt에서 상한 포화 처리
+- 대상 파일만 변경했습니다.

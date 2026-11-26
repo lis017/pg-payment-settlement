@@ -1,0 +1,47 @@
+[
+  {
+    "id": "T1",
+    "title": "정산 금액 균등 분배",
+    "targetPath": "src/main/java/com/toss/cashback/domain/settlement/service/SettlementAllocator.java",
+    "testClass": "com.toss.cashback.domain.settlement.service.SettlementAllocatorHiddenTest",
+    "hiddenTest": "SettlementAllocatorHiddenTest.java",
+    "expectedTests": 6,
+    "requirements": "새 유틸리티 클래스 SettlementAllocator를 구현하라. public static List<Long> allocate(long amount, int recipients)를 제공한다. amount는 0 이상, recipients는 1~1000이어야 하며 위반 시 IllegalArgumentException을 던진다. 정수 나눗셈의 몫을 기본 배분하고 나머지 1원은 앞 인덱스부터 한 개씩 배분한다. 반환 크기는 recipients이고 모든 값은 음수가 아니며 합계는 amount와 정확히 같아야 한다. Long.MAX_VALUE에서도 중간 합계 오버플로 없이 동작해야 하고 반환 List는 수정 불가능해야 한다. 대상 파일 외에는 변경하지 마라."
+  },
+  {
+    "id": "T2",
+    "title": "오버플로 안전 재시도 백오프",
+    "targetPath": "src/main/java/com/toss/cashback/infrastructure/api/RetryBackoffPolicy.java",
+    "testClass": "com.toss.cashback.infrastructure.api.RetryBackoffPolicyHiddenTest",
+    "hiddenTest": "RetryBackoffPolicyHiddenTest.java",
+    "expectedTests": 6,
+    "requirements": "새 유틸리티 클래스 RetryBackoffPolicy를 구현하라. public static long delayMillis(int attempt, long initialDelayMillis, long maxDelayMillis)를 제공한다. attempt는 1부터 시작하며 delay는 min(maxDelayMillis, initialDelayMillis * 2^(attempt-1))이다. attempt, initialDelayMillis, maxDelayMillis는 모두 양수이고 initialDelayMillis는 maxDelayMillis 이하여야 하며 위반 시 IllegalArgumentException을 던진다. 큰 attempt와 Long.MAX_VALUE 경계에서도 음수나 오버플로가 발생하지 않고 max 값으로 포화되어야 한다. 부동소수점 계산을 사용하지 마라. 대상 파일 외에는 변경하지 마라."
+  },
+  {
+    "id": "T3",
+    "title": "멱등성 UUID 정규화",
+    "targetPath": "src/main/java/com/toss/cashback/domain/payment/service/IdempotencyKeyNormalizer.java",
+    "testClass": "com.toss.cashback.domain.payment.service.IdempotencyKeyNormalizerHiddenTest",
+    "hiddenTest": "IdempotencyKeyNormalizerHiddenTest.java",
+    "expectedTests": 7,
+    "requirements": "새 유틸리티 클래스 IdempotencyKeyNormalizer를 구현하라. public static String normalize(String raw)를 제공한다. null과 blank는 IllegalArgumentException이다. 앞뒤 공백을 제거한 뒤 정확한 8-4-4-4-12 하이픈 UUID 문자열만 허용한다. UUID version은 1~5, variant는 RFC 4122 variant 2만 허용한다. 유효하면 소문자 canonical 문자열을 반환한다. 중괄호, 하이픈 없는 값, 축약 그룹, trailing 문자는 거부해야 한다. 대상 파일 외에는 변경하지 마라."
+  },
+  {
+    "id": "T4",
+    "title": "웹훅 HMAC 서명 검증",
+    "targetPath": "src/main/java/com/toss/cashback/infrastructure/webhook/WebhookSignatureVerifier.java",
+    "testClass": "com.toss.cashback.infrastructure.webhook.WebhookSignatureVerifierHiddenTest",
+    "hiddenTest": "WebhookSignatureVerifierHiddenTest.java",
+    "expectedTests": 6,
+    "requirements": "새 유틸리티 클래스 WebhookSignatureVerifier를 구현하라. public static String sign(String secret, String payload)와 public static boolean verify(String secret, String payload, String suppliedHex)를 제공한다. UTF-8과 HmacSHA256을 사용하고 sign은 소문자 64자리 hex를 반환한다. secret은 null/empty를 허용하지 않고 payload는 null을 허용하지 않으며 sign 입력 위반은 IllegalArgumentException이다. verify는 null, 길이 오류, 비-hex 서명에 false를 반환하고 대소문자 hex를 모두 허용한다. 서명 비교는 MessageDigest.isEqual을 사용해 constant-time으로 수행하며 secret이나 payload를 로그에 남기지 마라. 대상 파일 외에는 변경하지 마라."
+  },
+  {
+    "id": "T5",
+    "title": "정산 영업일 계산",
+    "targetPath": "src/main/java/com/toss/cashback/domain/settlement/service/SettlementDateCalculator.java",
+    "testClass": "com.toss.cashback.domain.settlement.service.SettlementDateCalculatorHiddenTest",
+    "hiddenTest": "SettlementDateCalculatorHiddenTest.java",
+    "expectedTests": 6,
+    "requirements": "새 유틸리티 클래스 SettlementDateCalculator를 구현하라. public static LocalDate calculate(LocalDate paymentDate, int businessDays, Set<LocalDate> holidays)를 제공한다. paymentDate null과 음수 businessDays는 IllegalArgumentException이다. businessDays가 0이면 paymentDate를 그대로 반환한다. 양수이면 시작일은 세지 않고 토요일, 일요일, holidays에 포함된 날짜를 건너뛰어 정확히 N 영업일 뒤를 반환한다. holidays null은 빈 집합으로 처리하고 전달받은 집합을 변경하지 마라. 대상 파일 외에는 변경하지 마라."
+  }
+]

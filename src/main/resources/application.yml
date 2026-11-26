@@ -1,0 +1,120 @@
+spring:
+  # ======================== 데이터베이스 (MySQL) ========================
+  # 환경변수 우선, 없으면 로컬 기본값 사용 (${환경변수:기본값} 문법)
+  # - 로컬 직접 실행:  localhost (기본값 사용)
+  # - Docker Compose: docker-compose.yml의 environment에서 DB_HOST=mysql 주입
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/cashback_db?useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=UTF-8&serverTimezone=Asia/Seoul
+    username: ${DB_USERNAME:cashback_user}    # [변경] docker-compose.yml MYSQL_USER와 동일하게
+    password: ${DB_PASSWORD:cashback_pass}    # [변경] docker-compose.yml MYSQL_PASSWORD와 동일하게
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 30              # [변경] 동시 결제량에 따라 조정 (CPU 코어 수 * 2 + SSD 여유)
+      minimum-idle: 5                    # 최소 유휴 커넥션 수
+      connection-timeout: 30000          # 커넥션 획득 대기 최대 30초
+      idle-timeout: 600000               # 유휴 커넥션 10분 후 반환
+      max-lifetime: 1800000              # 커넥션 최대 수명 30분 (MySQL wait_timeout 대비)
+      pool-name: CashbackHikariPool      # 메트릭에서 풀 이름으로 식별 가능
+
+  # ======================== JPA / Hibernate ========================
+  jpa:
+    hibernate:
+      # ddl-auto는 프로파일에서 오버라이드
+      # - local:  update  (application-local.yml)
+      # - prod:   validate (application-prod.yml)
+      # - 기본값: update (Docker 실행 환경에서 스키마 자동 생성)
+      ddl-auto: update
+    show-sql: false                      # SQL 로그: application-local.yml에서 true로 오버라이드
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: false                # SQL 포맷: 운영에서는 불필요한 로그 비용 방지
+
+# ======================== Redis (Redisson 연결 정보) ========================
+# RedissonConfig.java에서 @Value로 주입받아 사용
+# - 로컬 직접 실행:  localhost (기본값)
+# - Docker Compose: REDIS_HOST=redis, REDIS_PORT=6379 환경변수로 주입
+redis:
+  host: ${REDIS_HOST:localhost}    # [변경] Docker 환경에서는 서비스명 "redis"로 자동 주입
+  port: ${REDIS_PORT:6379}
+
+# ======================== 메트릭 & Actuator ========================
+# 메트릭 확인 경로:
+#   - Prometheus 형식: GET http://localhost:8080/actuator/prometheus
+#   - 특정 메트릭:     GET http://localhost:8080/actuator/metrics/payment.success
+#   - 전체 목록:       GET http://localhost:8080/actuator/metrics
+#   - 헬스체크:        GET http://localhost:8080/actuator/health
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics, prometheus  # 외부에 노출할 엔드포인트
+  endpoint:
+    health:
+      show-details: when_authorized      # 운영: 인증된 요청에만 DB/Redis 상세 노출 (보안)
+      # 로컬 개발 시 always로 변경하려면 application-local.yml에서 오버라이드
+  metrics:
+    export:
+      prometheus:
+        enabled: true                    # Prometheus 메트릭 수집 활성화
+
+# ======================== 분산 락 설정 (Redisson) ========================
+#
+# leaseTime 산정 근거 (서버 크래시 시 락 자동 해제 시간):
+#   - DB 연산 정상:          ~50ms
+#   - DB 슬로우 쿼리(부하):  ~500ms
+#   - GC minor pause:        ~1s
+#   - GC full pause (G1GC):  ~5~10s  ← 핵심 변수
+#   → account(이체): GC 최악(10s) × 3배 여유 = 30s
+#
+# waitTime 산정 근거 (락 획득 대기 시간):
+#   - 동시 10건: 10 × 50ms = 500ms 대기
+#   - 동시 100건: 최악 5s 대기
+#   → 5s: 초과 시 LOCK_ACQUISITION_FAILED 반환 (빠른 실패로 스레드 pileup 방지)
+#
+# [고급 대안] leaseTime=-1 설정 시 Redisson WatchDog이 10초마다 자동 연장
+#   → 무한 연장이라 서버 크래시 복구 시점 예측 불가 → 명시적 leaseTime 선호
+lock:
+  account:
+    wait-seconds: 5    # 락 획득 대기 시간 (초과 시 LOCK_ACQUISITION_FAILED)
+    lease-seconds: 30  # 크래시/GC full pause 대비 자동 해제 시간 (GC 최악 10s × 3배)
+
+# ======================== 웹훅 설정 ========================
+webhook:
+  simulate-error: false   # [변경] true로 설정하면 웹훅 발송 실패 시뮬레이션 (재시도 로직 확인용)
+
+# ======================== 결제 설정 ========================
+cashback:
+  external-bank:
+    simulate-delay: false   # [테스트용] true로 변경 시 외부 은행 API 5초 지연 → 타임아웃 발동
+    simulate-error: false   # [테스트용] true로 변경 시 외부 은행 API 에러 발동
+    timeout-seconds: 3      # [변경] 외부 은행 API 타임아웃 기준 시간 (초)
+  virtual-account:
+    account-number: TOSS-VIRTUAL-001  # PG 자금 보관용 가상계좌 번호 (DataInitializer에서 생성)
+
+# ======================== Circuit Breaker (Resilience4j) ========================
+# 외부 은행 API 서킷 브레이커 설정
+# 동작 원리:
+#   CLOSED (정상): 요청 통과 → 실패율 집계
+#   OPEN   (차단): 요청 즉시 차단 → waitDurationInOpenState 후 HALF-OPEN 전환
+#   HALF-OPEN (복구 시도): 제한된 요청 허용 → 성공 시 CLOSED, 실패 시 OPEN 재전환
+resilience4j:
+  circuitbreaker:
+    instances:
+      externalBankService:                        # MockExternalBankService.approve()에 적용될 이름
+        slidingWindowType: COUNT_BASED            # COUNT_BASED: 최근 N건 기준 (TIME_BASED: 시간 기준)
+        slidingWindowSize: 5                      # [변경] 최근 5번 요청 기준으로 실패율 계산
+        failureRateThreshold: 60                  # [변경] 60% 이상 실패 시 서킷 Open
+        waitDurationInOpenState: 30s              # [변경] Open 상태 유지 시간 (30초 후 Half-Open 시도)
+        permittedNumberOfCallsInHalfOpenState: 2  # Half-Open에서 허용할 테스트 요청 수
+        minimumNumberOfCalls: 3                   # 서킷 동작 시작 최소 요청 수 (3건 이상 쌓여야 판단)
+        recordExceptions:                         # 실패로 카운트할 예외 목록
+          - com.toss.cashback.global.error.CustomException
+
+# ======================== 로깅 ========================
+# 운영 기본값: INFO/OFF
+# 로컬 개발 상세 로그: SPRING_PROFILES_ACTIVE=local → application-local.yml 적용
+logging:
+  level:
+    com.toss.cashback: INFO
+    org.hibernate.SQL: OFF               # SQL 로그 기본 비활성화 (로컬에서만 DEBUG)

@@ -1,0 +1,31 @@
+{
+  "benchmarkType": "controlled replay; seeded candidate outputs, no external model call",
+  "generatedAt": "2026-09-09T15:23:46.082Z",
+  "baseline": {
+    "reviewerFindingsRemaining": 3,
+    "policyViolationsAppliedWithoutGate": 4
+  },
+  "harness": {
+    "reviewerFindingsRemaining": 0,
+    "reviewerFindingsDetected": [
+      "PG-ROUNDING",
+      "PG-SECRET-LOG",
+      "PG-MULTI-LOCK"
+    ],
+    "policyViolationsBlocked": 4,
+    "policyViolationsApplied": 0,
+    "traceCoveragePercent": 100,
+    "auditChainValid": true,
+    "auditEventCount": 7
+  },
+  "improvement": {
+    "missedDefects": "3 -> 0",
+    "missedDefectReductionPercent": 100,
+    "riskyActionReduction": "4 -> 0",
+    "riskyActionReductionPercent": 100
+  },
+  "limitations": [
+    "This validates the gate and reviewer rules, not the relative intelligence or speed of Claude and GPT.",
+    "Use repeated live A/B runs before claiming general productivity improvement."
+  ]
+}

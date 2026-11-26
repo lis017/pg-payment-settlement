@@ -1,0 +1,48 @@
+{
+  "taskId": "PG-AI-HARNESS-REAL-AB-001",
+  "objective": "동일한 PG 도메인 개발 과제 5개를 Direct AI와 Plan-first 역할 분리 Harness로 수행해 실제 A/B 지표를 수집한다.",
+  "acceptanceCriteria": [
+    "동일 모델과 추론 강도로 5개 과제의 Direct/Harness 실행을 완료한다.",
+    "각 조건은 동일한 시작 파일을 사용하고 숨은 테스트는 구현 후에만 주입한다.",
+    "계획 밖 변경, Reviewer finding, 잔존 오류, 재작업, 시간, 위험 명령 차단, Tool trace coverage를 원시 기록과 함께 산출한다.",
+    "집계 결과와 이력서에 사용할 수 있는 한계가 명시된 문장을 문서화한다."
+  ],
+  "evidence": [
+    "src/main/java/com/toss/cashback/domain/settlement/service/SettlementCalculator.java",
+    "src/main/java/com/toss/cashback/global/util/LogMaskUtil.java",
+    "src/main/java/com/toss/cashback/domain/webhook/service/WebhookService.java",
+    "tools/ai-harness/src/core.mjs"
+  ],
+  "allowedPaths": [
+    "experiments/ai-harness/**",
+    "results/real-ab/**",
+    "docs/ai-harness/REAL_AB_REPORT.md",
+    "docs/ai-harness/AI_EXPERIENCE.md"
+  ],
+  "forbiddenPaths": [
+    "README.md",
+    "src/main/**",
+    "src/test/**",
+    ".claude/**",
+    ".ai-harness/config/**",
+    ".ai-harness/schemas/**",
+    "tools/ai-harness/**"
+  ],
+  "dbImpact": "없음. 격리 복제본과 H2 테스트만 사용한다.",
+  "apiImpact": "없음",
+  "risks": [
+    "모델 비결정성으로 Direct와 Harness 결과 편차가 작거나 역전될 수 있음",
+    "5개 표본은 초기 실험으로 일반화에 제한이 있음",
+    "Codex 구독 사용량을 소비함"
+  ],
+  "tests": [
+    "node --test tools/ai-harness/test/harness.test.mjs",
+    "node experiments/ai-harness/validate-results.mjs"
+  ],
+  "nonGoals": [
+    "운영 PG 코드 변경",
+    "Claude 유료 구독 또는 Anthropic API 사용",
+    "통계적 유의성 주장"
+  ],
+  "rollback": "experiments/ai-harness, results/real-ab, docs/ai-harness/REAL_AB_REPORT.md를 제거하고 AI_EXPERIENCE.md의 실제 A/B 섹션을 되돌린다."
+}

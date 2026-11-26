@@ -1,0 +1,147 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.4/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :compileJava
+> Task :processResources
+> Task :classes
+
+> Task :compileTestJava
+
+> Task :compileTestJava FAILED
+
+[Incubating] Problems report is available at: file:///C:/Users/user/Desktop/pg-payment-settlement-master/.real-ab-workspaces-4f2ZIN/T2/direct/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.4/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+3 actionable tasks: 3 executed
+
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T2\direct\src\test\java\com\toss\cashback\infrastructure\api\RetryBackoffPolicyHiddenTest.java:9: error: cannot find symbol
+        assertEquals(100L, RetryBackoffPolicy.delayMillis(1, 100, 10_000));
+                           ^
+  symbol:   variable RetryBackoffPolicy
+  location: class RetryBackoffPolicyHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T2\direct\src\test\java\com\toss\cashback\infrastructure\api\RetryBackoffPolicyHiddenTest.java:10: error: cannot find symbol
+        assertEquals(200L, RetryBackoffPolicy.delayMillis(2, 100, 10_000));
+                           ^
+  symbol:   variable RetryBackoffPolicy
+  location: class RetryBackoffPolicyHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T2\direct\src\test\java\com\toss\cashback\infrastructure\api\RetryBackoffPolicyHiddenTest.java:11: error: cannot find symbol
+        assertEquals(800L, RetryBackoffPolicy.delayMillis(4, 100, 10_000));
+                           ^
+  symbol:   variable RetryBackoffPolicy
+  location: class RetryBackoffPolicyHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T2\direct\src\test\java\com\toss\cashback\infrastructure\api\RetryBackoffPolicyHiddenTest.java:15: error: cannot find symbol
+        assertEquals(1_000L, RetryBackoffPolicy.delayMillis(8, 100, 1_000));
+                             ^
+  symbol:   variable RetryBackoffPolicy
+  location: class RetryBackoffPolicyHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T2\direct\src\test\java\com\toss\cashback\infrastructure\api\RetryBackoffPolicyHiddenTest.java:19: error: cannot find symbol
+        assertEquals(Long.MAX_VALUE, RetryBackoffPolicy.delayMillis(63, Long.MAX_VALUE / 2, Long.MAX_VALUE));
+                                     ^
+  symbol:   variable RetryBackoffPolicy
+  location: class RetryBackoffPolicyHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T2\direct\src\test\java\com\toss\cashback\infrastructure\api\RetryBackoffPolicyHiddenTest.java:23: error: cannot find symbol
+        assertEquals(5_000L, RetryBackoffPolicy.delayMillis(Integer.MAX_VALUE, 1, 5_000));
+                             ^
+  symbol:   variable RetryBackoffPolicy
+  location: class RetryBackoffPolicyHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T2\direct\src\test\java\com\toss\cashback\infrastructure\api\RetryBackoffPolicyHiddenTest.java:27: error: cannot find symbol
+        assertEquals(7L, RetryBackoffPolicy.delayMillis(100, 7, 7));
+                         ^
+  symbol:   variable RetryBackoffPolicy
+  location: class RetryBackoffPolicyHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T2\direct\src\test\java\com\toss\cashback\infrastructure\api\RetryBackoffPolicyHiddenTest.java:31: error: cannot find symbol
+        assertThrows(IllegalArgumentException.class, () -> RetryBackoffPolicy.delayMillis(0, 1, 2));
+                                                           ^
+  symbol:   variable RetryBackoffPolicy
+  location: class RetryBackoffPolicyHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T2\direct\src\test\java\com\toss\cashback\infrastructure\api\RetryBackoffPolicyHiddenTest.java:32: error: cannot find symbol
+        assertThrows(IllegalArgumentException.class, () -> RetryBackoffPolicy.delayMillis(1, 0, 2));
+                                                           ^
+  symbol:   variable RetryBackoffPolicy
+  location: class RetryBackoffPolicyHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T2\direct\src\test\java\com\toss\cashback\infrastructure\api\RetryBackoffPolicyHiddenTest.java:33: error: cannot find symbol
+        assertThrows(IllegalArgumentException.class, () -> RetryBackoffPolicy.delayMillis(1, 2, 0));
+                                                           ^
+  symbol:   variable RetryBackoffPolicy
+  location: class RetryBackoffPolicyHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T2\direct\src\test\java\com\toss\cashback\infrastructure\api\RetryBackoffPolicyHiddenTest.java:34: error: cannot find symbol
+        assertThrows(IllegalArgumentException.class, () -> RetryBackoffPolicy.delayMillis(1, 3, 2));
+                                                           ^
+  symbol:   variable RetryBackoffPolicy
+  location: class RetryBackoffPolicyHiddenTest
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+11 errors
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileTestJava'.
+> Compilation failed; see the compiler output below.
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T2\direct\src\test\java\com\toss\cashback\infrastructure\api\RetryBackoffPolicyHiddenTest.java:9: error: cannot find symbol
+          assertEquals(100L, RetryBackoffPolicy.delayMillis(1, 100, 10_000));
+                             ^
+    symbol:   variable RetryBackoffPolicy
+    location: class RetryBackoffPolicyHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T2\direct\src\test\java\com\toss\cashback\infrastructure\api\RetryBackoffPolicyHiddenTest.java:10: error: cannot find symbol
+          assertEquals(200L, RetryBackoffPolicy.delayMillis(2, 100, 10_000));
+                             ^
+    symbol:   variable RetryBackoffPolicy
+    location: class RetryBackoffPolicyHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T2\direct\src\test\java\com\toss\cashback\infrastructure\api\RetryBackoffPolicyHiddenTest.java:11: error: cannot find symbol
+          assertEquals(800L, RetryBackoffPolicy.delayMillis(4, 100, 10_000));
+                             ^
+    symbol:   variable RetryBackoffPolicy
+    location: class RetryBackoffPolicyHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T2\direct\src\test\java\com\toss\cashback\infrastructure\api\RetryBackoffPolicyHiddenTest.java:15: error: cannot find symbol
+          assertEquals(1_000L, RetryBackoffPolicy.delayMillis(8, 100, 1_000));
+                               ^
+    symbol:   variable RetryBackoffPolicy
+    location: class RetryBackoffPolicyHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T2\direct\src\test\java\com\toss\cashback\infrastructure\api\RetryBackoffPolicyHiddenTest.java:19: error: cannot find symbol
+          assertEquals(Long.MAX_VALUE, RetryBackoffPolicy.delayMillis(63, Long.MAX_VALUE / 2, Long.MAX_VALUE));
+                                       ^
+    symbol:   variable RetryBackoffPolicy
+    location: class RetryBackoffPolicyHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T2\direct\src\test\java\com\toss\cashback\infrastructure\api\RetryBackoffPolicyHiddenTest.java:23: error: cannot find symbol
+          assertEquals(5_000L, RetryBackoffPolicy.delayMillis(Integer.MAX_VALUE, 1, 5_000));
+                               ^
+    symbol:   variable RetryBackoffPolicy
+    location: class RetryBackoffPolicyHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T2\direct\src\test\java\com\toss\cashback\infrastructure\api\RetryBackoffPolicyHiddenTest.java:27: error: cannot find symbol
+          assertEquals(7L, RetryBackoffPolicy.delayMillis(100, 7, 7));
+                           ^
+    symbol:   variable RetryBackoffPolicy
+    location: class RetryBackoffPolicyHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T2\direct\src\test\java\com\toss\cashback\infrastructure\api\RetryBackoffPolicyHiddenTest.java:31: error: cannot find symbol
+          assertThrows(IllegalArgumentException.class, () -> RetryBackoffPolicy.delayMillis(0, 1, 2));
+                                                             ^
+    symbol:   variable RetryBackoffPolicy
+    location: class RetryBackoffPolicyHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T2\direct\src\test\java\com\toss\cashback\infrastructure\api\RetryBackoffPolicyHiddenTest.java:32: error: cannot find symbol
+          assertThrows(IllegalArgumentException.class, () -> RetryBackoffPolicy.delayMillis(1, 0, 2));
+                                                             ^
+    symbol:   variable RetryBackoffPolicy
+    location: class RetryBackoffPolicyHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T2\direct\src\test\java\com\toss\cashback\infrastructure\api\RetryBackoffPolicyHiddenTest.java:33: error: cannot find symbol
+          assertThrows(IllegalArgumentException.class, () -> RetryBackoffPolicy.delayMillis(1, 2, 0));
+                                                             ^
+    symbol:   variable RetryBackoffPolicy
+    location: class RetryBackoffPolicyHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T2\direct\src\test\java\com\toss\cashback\infrastructure\api\RetryBackoffPolicyHiddenTest.java:34: error: cannot find symbol
+          assertThrows(IllegalArgumentException.class, () -> RetryBackoffPolicy.delayMillis(1, 3, 2));
+                                                             ^
+    symbol:   variable RetryBackoffPolicy
+    location: class RetryBackoffPolicyHiddenTest
+  Note: Recompile with -Xlint:unchecked for details.
+  Note: Some input files use unchecked or unsafe operations.
+  11 errors
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights.
+
+BUILD FAILED in 16s

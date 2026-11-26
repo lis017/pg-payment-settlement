@@ -1,0 +1,9 @@
+구현 완료했습니다.
+
+추가된 파일: [SettlementAllocator.java](C:/Users/user/Desktop/pg-payment-settlement-master/.real-ab-workspaces-4f2ZIN/T1/direct/src/main/java/com/toss/cashback/global/util/SettlementAllocator.java)
+
+- 입력값 검증
+- 몫과 나머지 기준 배분
+- `Long.MAX_VALUE` 안전 처리
+- 음수 없는 결과 및 정확한 배분
+- 수정 불가능한 `List` 반환

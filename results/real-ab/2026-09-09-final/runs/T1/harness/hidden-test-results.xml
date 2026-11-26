@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.toss.cashback.domain.settlement.service.SettlementAllocatorHiddenTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-09-09T14:29:26.221Z" hostname="DESKTOP-KCPM44A" time="0.029">
+  <properties/>
+  <testcase name="handlesLongMaxValueWithoutOverflow()" classname="com.toss.cashback.domain.settlement.service.SettlementAllocatorHiddenTest" time="0.021"/>
+  <testcase name="returnsUnmodifiableList()" classname="com.toss.cashback.domain.settlement.service.SettlementAllocatorHiddenTest" time="0.001"/>
+  <testcase name="rejectsInvalidArguments()" classname="com.toss.cashback.domain.settlement.service.SettlementAllocatorHiddenTest" time="0.001"/>
+  <testcase name="supportsZeroAmount()" classname="com.toss.cashback.domain.settlement.service.SettlementAllocatorHiddenTest" time="0.001"/>
+  <testcase name="supportsMoreRecipientsThanWon()" classname="com.toss.cashback.domain.settlement.service.SettlementAllocatorHiddenTest" time="0.0"/>
+  <testcase name="distributesRemainderToEarliestRecipients()" classname="com.toss.cashback.domain.settlement.service.SettlementAllocatorHiddenTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

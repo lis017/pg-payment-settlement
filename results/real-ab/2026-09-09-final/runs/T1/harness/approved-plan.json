@@ -1,0 +1,34 @@
+{
+  "traceId": "a80f4615-80d8-4642-955d-c19d6706dd5d",
+  "approved": true,
+  "approvedBy": "user-requested-real-ab-benchmark",
+  "planErrors": [],
+  "plan": {
+    "summary": "SettlementAllocator.java만 수정해 입력 검증, 균등 정수 배분, 나머지 선순위 배분, Long.MAX_VALUE 안전성, 불변 반환 리스트를 구현한다. 현재 환경에서는 파일을 수정하지 않는다.",
+    "allowedPaths": [
+      "src/main/java/com/toss/cashback/domain/settlement/service/SettlementAllocator.java"
+    ],
+    "steps": [
+      "SettlementAllocator를 대상 경로에 public 유틸리티 클래스로 추가하거나 기존 선언을 유지한다.",
+      "allocate(long amount, int recipients)를 public static 메서드로 정의한다.",
+      "amount가 0 미만이거나 recipients가 1 미만 또는 1000 초과이면 즉시 IllegalArgumentException을 던진다.",
+      "몫 quotient=amount/recipients와 나머지 remainder=amount%recipients를 계산한다.",
+      "recipients개 원소를 생성하고 인덱스가 remainder 미만이면 quotient+1, 그 외에는 quotient를 배정한다. 합계를 별도로 누적하지 않아 Long.MAX_VALUE에서도 중간 합계 오버플로를 방지한다.",
+      "생성된 결과를 수정 불가능한 List로 반환한다.",
+      "변경 범위가 대상 파일 하나뿐인지 확인한다."
+    ],
+    "risks": [
+      "quotient+1은 amount가 Long.MAX_VALUE인 경우에도 recipients가 1이면 remainder가 0이므로 오버플로하지 않도록 조건과 계산 순서를 유지해야 한다.",
+      "List.of는 원소 수가 동적이므로 사용할 수 없으며, mutable 리스트를 그대로 반환하면 요구사항을 위반한다.",
+      "검증 순서와 경계값을 잘못 처리하면 amount=0, recipients=1 또는 recipients=1000 같은 유효 입력이 거부될 수 있다."
+    ],
+    "tests": [
+      "amount=0, recipients=1 및 1000에서 반환 크기가 recipients이고 모든 값이 0인지 확인한다.",
+      "amount가 recipients로 나누어떨어지는 경우 모든 원소가 quotient인지 확인한다.",
+      "나머지가 있는 경우 앞 remainder개 원소만 quotient+1이고 나머지는 quotient인지 확인한다.",
+      "Long.MAX_VALUE를 recipients=1, 2, 1000에 각각 적용해 각 원소가 음수가 아니고 배분 규칙을 따르는지 확인한다. 합계 검증은 오버플로하지 않는 방식으로 수행한다.",
+      "amount=-1, recipients=0, recipients=1001 각각에서 IllegalArgumentException이 발생하는지 확인한다.",
+      "정상 반환 리스트에 add, set, remove를 시도해 수정 불가능한 리스트인지 확인한다."
+    ]
+  }
+}

@@ -1,0 +1,117 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.4/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :compileJava
+> Task :processResources
+> Task :classes
+
+> Task :compileTestJava
+
+> Task :compileTestJava FAILED
+
+[Incubating] Problems report is available at: file:///C:/Users/user/Desktop/pg-payment-settlement-master/.real-ab-workspaces-4f2ZIN/T5/direct/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.4/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+3 actionable tasks: 3 executed
+
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T5\direct\src\test\java\com\toss\cashback\domain\settlement\service\SettlementDateCalculatorHiddenTest.java:14: error: cannot find symbol
+        assertEquals(saturday, SettlementDateCalculator.calculate(saturday, 0, Set.of()));
+                               ^
+  symbol:   variable SettlementDateCalculator
+  location: class SettlementDateCalculatorHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T5\direct\src\test\java\com\toss\cashback\domain\settlement\service\SettlementDateCalculatorHiddenTest.java:19: error: cannot find symbol
+                SettlementDateCalculator.calculate(LocalDate.of(2026, 9, 11), 1, Set.of()));
+                ^
+  symbol:   variable SettlementDateCalculator
+  location: class SettlementDateCalculatorHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T5\direct\src\test\java\com\toss\cashback\domain\settlement\service\SettlementDateCalculatorHiddenTest.java:24: error: cannot find symbol
+                SettlementDateCalculator.calculate(
+                ^
+  symbol:   variable SettlementDateCalculator
+  location: class SettlementDateCalculatorHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T5\direct\src\test\java\com\toss\cashback\domain\settlement\service\SettlementDateCalculatorHiddenTest.java:30: error: cannot find symbol
+                SettlementDateCalculator.calculate(LocalDate.of(2026, 9, 11), 3, Set.of()));
+                ^
+  symbol:   variable SettlementDateCalculator
+  location: class SettlementDateCalculatorHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T5\direct\src\test\java\com\toss\cashback\domain\settlement\service\SettlementDateCalculatorHiddenTest.java:35: error: cannot find symbol
+                SettlementDateCalculator.calculate(LocalDate.of(2026, 9, 11), 1, null));
+                ^
+  symbol:   variable SettlementDateCalculator
+  location: class SettlementDateCalculatorHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T5\direct\src\test\java\com\toss\cashback\domain\settlement\service\SettlementDateCalculatorHiddenTest.java:38: error: cannot find symbol
+        SettlementDateCalculator.calculate(LocalDate.of(2026, 9, 11), 1, holidays);
+        ^
+  symbol:   variable SettlementDateCalculator
+  location: class SettlementDateCalculatorHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T5\direct\src\test\java\com\toss\cashback\domain\settlement\service\SettlementDateCalculatorHiddenTest.java:43: error: cannot find symbol
+        assertThrows(IllegalArgumentException.class, () -> SettlementDateCalculator.calculate(null, 1, Set.of()));
+                                                           ^
+  symbol:   variable SettlementDateCalculator
+  location: class SettlementDateCalculatorHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T5\direct\src\test\java\com\toss\cashback\domain\settlement\service\SettlementDateCalculatorHiddenTest.java:44: error: cannot find symbol
+        assertThrows(IllegalArgumentException.class, () -> SettlementDateCalculator.calculate(LocalDate.now(), -1, Set.of()));
+                                                           ^
+  symbol:   variable SettlementDateCalculator
+  location: class SettlementDateCalculatorHiddenTest
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+8 errors
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileTestJava'.
+> Compilation failed; see the compiler output below.
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T5\direct\src\test\java\com\toss\cashback\domain\settlement\service\SettlementDateCalculatorHiddenTest.java:14: error: cannot find symbol
+          assertEquals(saturday, SettlementDateCalculator.calculate(saturday, 0, Set.of()));
+                                 ^
+    symbol:   variable SettlementDateCalculator
+    location: class SettlementDateCalculatorHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T5\direct\src\test\java\com\toss\cashback\domain\settlement\service\SettlementDateCalculatorHiddenTest.java:19: error: cannot find symbol
+                  SettlementDateCalculator.calculate(LocalDate.of(2026, 9, 11), 1, Set.of()));
+                  ^
+    symbol:   variable SettlementDateCalculator
+    location: class SettlementDateCalculatorHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T5\direct\src\test\java\com\toss\cashback\domain\settlement\service\SettlementDateCalculatorHiddenTest.java:24: error: cannot find symbol
+                  SettlementDateCalculator.calculate(
+                  ^
+    symbol:   variable SettlementDateCalculator
+    location: class SettlementDateCalculatorHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T5\direct\src\test\java\com\toss\cashback\domain\settlement\service\SettlementDateCalculatorHiddenTest.java:30: error: cannot find symbol
+                  SettlementDateCalculator.calculate(LocalDate.of(2026, 9, 11), 3, Set.of()));
+                  ^
+    symbol:   variable SettlementDateCalculator
+    location: class SettlementDateCalculatorHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T5\direct\src\test\java\com\toss\cashback\domain\settlement\service\SettlementDateCalculatorHiddenTest.java:35: error: cannot find symbol
+                  SettlementDateCalculator.calculate(LocalDate.of(2026, 9, 11), 1, null));
+                  ^
+    symbol:   variable SettlementDateCalculator
+    location: class SettlementDateCalculatorHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T5\direct\src\test\java\com\toss\cashback\domain\settlement\service\SettlementDateCalculatorHiddenTest.java:38: error: cannot find symbol
+          SettlementDateCalculator.calculate(LocalDate.of(2026, 9, 11), 1, holidays);
+          ^
+    symbol:   variable SettlementDateCalculator
+    location: class SettlementDateCalculatorHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T5\direct\src\test\java\com\toss\cashback\domain\settlement\service\SettlementDateCalculatorHiddenTest.java:43: error: cannot find symbol
+          assertThrows(IllegalArgumentException.class, () -> SettlementDateCalculator.calculate(null, 1, Set.of()));
+                                                             ^
+    symbol:   variable SettlementDateCalculator
+    location: class SettlementDateCalculatorHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-4f2ZIN\T5\direct\src\test\java\com\toss\cashback\domain\settlement\service\SettlementDateCalculatorHiddenTest.java:44: error: cannot find symbol
+          assertThrows(IllegalArgumentException.class, () -> SettlementDateCalculator.calculate(LocalDate.now(), -1, Set.of()));
+                                                             ^
+    symbol:   variable SettlementDateCalculator
+    location: class SettlementDateCalculatorHiddenTest
+  Note: Recompile with -Xlint:unchecked for details.
+  Note: Some input files use unchecked or unsafe operations.
+  8 errors
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights.
+
+BUILD FAILED in 15s

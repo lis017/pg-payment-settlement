@@ -1,0 +1,50 @@
+{
+  "taskId": "PG-AI-HARNESS-CONVERSATION-GATE-001",
+  "objective": "모든 AI 개발 요청에서 읽기 전용 조사와 구체적인 변경 계획 보고를 먼저 수행하고, 사용자의 명시적 대화 승인이 있기 전까지 구현 도구를 차단한다.",
+  "acceptanceCriteria": [
+    "AGENTS.md가 조사, 계획 보고, 승인 대기, 구현의 대화 순서를 명확히 강제한다.",
+    "Plan 제출 후 상태가 WAITING_APPROVAL이 되며 이 상태에서는 Write/Edit 및 비읽기 명령이 차단된다.",
+    "사용자의 명시적 승인 뒤에만 APPROVED로 전환되고 승인자, 시간, Plan 해시가 감사 로그에 남는다.",
+    "승인 전 읽기 작업 허용과 쓰기 차단을 자동 테스트로 검증한다.",
+    "운영 애플리케이션 소스, DB, API는 변경하지 않는다."
+  ],
+  "evidence": [
+    "AGENTS.md",
+    "tools/ai-harness/src/core.mjs",
+    "tools/ai-harness/src/cli.mjs",
+    "tools/ai-harness/test/harness.test.mjs",
+    ".claude/settings.json",
+    "docs/ai-harness/README.md"
+  ],
+  "allowedPaths": [
+    "AGENTS.md",
+    "tools/ai-harness/src/core.mjs",
+    "tools/ai-harness/src/cli.mjs",
+    "tools/ai-harness/test/harness.test.mjs",
+    "docs/ai-harness/README.md",
+    "docs/ai-harness/AI_EXPERIENCE.md"
+  ],
+  "forbiddenPaths": [
+    "src/main/**",
+    "src/test/**",
+    ".claude/settings.json",
+    ".ai-harness/config/**",
+    ".ai-harness/schemas/**"
+  ],
+  "dbImpact": "없음",
+  "apiImpact": "없음",
+  "risks": [
+    "Codex는 AGENTS.md 지침으로 대화 흐름을 따르지만 Claude Code PreToolUse와 동일한 네이티브 Hook 강제 계층은 제공되지 않는다.",
+    "기존 PLAN_PENDING 상태명을 사용하는 외부 스크립트가 있다면 WAITING_APPROVAL로 갱신해야 한다."
+  ],
+  "tests": [
+    "node --test tools/ai-harness/test/harness.test.mjs",
+    "node tools/ai-harness/src/benchmark.mjs"
+  ],
+  "nonGoals": [
+    "Codex 제품 자체의 권한 확인 UI 변경",
+    "운영 결제·정산 코드 변경",
+    "Claude 또는 OpenAI 구독 설정 변경"
+  ],
+  "rollback": "수정된 AGENTS.md, Harness 코드·테스트·문서를 이전 내용으로 되돌리고 상태명을 PLAN_PENDING으로 복원한다."
+}

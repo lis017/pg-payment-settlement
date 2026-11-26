@@ -1,0 +1,10 @@
+{
+  "startedAt": "2026-09-09T14:26:42.865Z",
+  "model": "gpt-5.6-luna",
+  "reasoningEffort": "low",
+  "reviewerModel": "gpt-6-astra",
+  "reviewerReasoningEffort": "medium",
+  "taskCount": 5,
+  "workRoot": "C:\\Users\\user\\Desktop\\pg-payment-settlement-master\\.real-ab-workspaces-0I0fts",
+  "protocol": "Direct one-pass vs Plan/Approve/Implement/Independent Review/Repair"
+}

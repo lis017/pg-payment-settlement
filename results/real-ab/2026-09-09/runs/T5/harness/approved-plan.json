@@ -1,0 +1,36 @@
+{
+  "traceId": "142d652b-e261-47dd-aac5-47ec53fc7454",
+  "approved": true,
+  "approvedBy": "user-requested-real-ab-benchmark",
+  "planErrors": [],
+  "plan": {
+    "summary": "SettlementDateCalculator.java에 날짜 계산 유틸리티를 추가한다. 대상 파일만 변경하며 입력 검증, 주말·휴일 제외, 시작일 제외 규칙을 반영한다.",
+    "allowedPaths": [
+      "src/main/java/com/toss/cashback/domain/settlement/service/SettlementDateCalculator.java"
+    ],
+    "steps": [
+      "java.time.LocalDate와 java.util.Set을 사용해 public final 유틸리티 클래스 SettlementDateCalculator를 정의하고, 인스턴스 생성을 막는다.",
+      "calculate(LocalDate paymentDate, int businessDays, Set<LocalDate> holidays) 진입부에서 paymentDate가 null이거나 businessDays가 음수이면 IllegalArgumentException을 던진다.",
+      "holidays가 null이면 빈 집합으로 취급하고, 전달받은 집합에는 add/remove 등의 변경을 수행하지 않는다.",
+      "businessDays가 0이면 paymentDate 객체를 그대로 반환한다.",
+      "businessDays가 양수이면 paymentDate 다음 날부터 하루씩 이동하며, 토요일·일요일이 아니고 휴일 집합에 포함되지 않은 날짜만 영업일로 센다.",
+      "영업일 카운트가 businessDays에 도달한 날짜를 반환한다. 반복 중 날짜 자체를 변경하지 않고 LocalDate의 불변 연산을 사용한다."
+    ],
+    "risks": [
+      "기존 파일 또는 패키지의 스타일·접근 제한자 규칙과 일치해야 한다.",
+      "휴일 집합이 수정 불가능하거나 사용자 정의 구현이어도 읽기만 하도록 보장해야 한다.",
+      "businessDays가 매우 큰 경우에도 오버플로 없이 LocalDate 범위 내에서 동작해야 한다."
+    ],
+    "tests": [
+      "paymentDate가 null인 경우 IllegalArgumentException인지 확인한다.",
+      "businessDays가 -1인 경우 IllegalArgumentException인지 확인한다.",
+      "businessDays가 0이면 입력 paymentDate와 동일한 날짜가 반환되는지 확인한다.",
+      "평일 기준 1 영업일 뒤가 다음 날짜인지 확인하고, 금요일 기준 1 영업일 뒤가 월요일인지 확인한다.",
+      "토요일·일요일을 포함한 여러 날짜 범위에서 정확히 N개의 영업일만 계산되는지 확인한다.",
+      "holidays에 평일이 포함되면 해당 날짜를 건너뛰고 다음 영업일을 반환하는지 확인한다.",
+      "holidays가 null이어도 주말 규칙만 적용해 정상 계산되는지 확인한다.",
+      "입력 holidays 집합의 원소와 크기가 계산 전후 동일한지 확인한다.",
+      "paymentDate가 휴일이더라도 시작일은 세지 않고 paymentDate 다음 날부터 계산하는지 확인한다."
+    ]
+  }
+}

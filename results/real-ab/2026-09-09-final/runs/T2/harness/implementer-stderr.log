@@ -1,0 +1,7 @@
+Reading additional input from stdin...
+2026-09-09T14:29:46.672885Z  WARN codex_core::shell_snapshot: Failed to create shell snapshot for powershell: Shell snapshot not supported yet for PowerShell
+2026-09-09T14:29:56.184284Z  WARN codex_core::guardian::review_session: failed to refresh guardian trunk rollout snapshot: Session persistence is disabled; cannot guardian review fork.
+2026-09-09T14:30:02.163965Z  WARN codex_core::guardian::review_session: failed to refresh guardian trunk rollout snapshot: Session persistence is disabled; cannot guardian review fork.
+2026-09-09T14:30:08.792991Z  WARN codex_core::guardian::review_session: failed to refresh guardian trunk rollout snapshot: Session persistence is disabled; cannot guardian review fork.
+2026-09-09T14:30:24.399739Z  WARN codex_core::guardian::review_session: failed to refresh guardian trunk rollout snapshot: Session persistence is disabled; cannot guardian review fork.
+2026-09-09T14:30:31.480485Z  WARN codex_core::guardian::review_session: failed to refresh guardian trunk rollout snapshot: Session persistence is disabled; cannot guardian review fork.

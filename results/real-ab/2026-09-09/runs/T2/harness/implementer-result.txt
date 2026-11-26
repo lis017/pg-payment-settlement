@@ -1,0 +1,7 @@
+구현 완료했습니다.
+
+- 대상 파일: [RetryBackoffPolicy.java](C:/Users/user/Desktop/pg-payment-settlement-master/.real-ab-workspaces-4f2ZIN/T2/harness/src/main/java/com/toss/cashback/infrastructure/api/RetryBackoffPolicy.java)
+- 입력값 검증 및 `IllegalArgumentException` 처리
+- 정수 기반 지수 백오프
+- `Long.MAX_VALUE` 포함 오버플로 방지 및 최대값 포화
+- 대상 파일만 추가 변경

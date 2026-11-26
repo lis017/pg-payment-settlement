@@ -1,0 +1,7 @@
+구현 완료했습니다.
+
+- 대상 파일: [RetryBackoffPolicy.java](C:/Users/user/Desktop/pg-payment-settlement-master/.real-ab-workspaces-4f2ZIN/T2/direct/src/main/java/com/toss/cashback/global/util/RetryBackoffPolicy.java)
+- 양수 및 범위 검증
+- 정수 연산 기반 지수 백오프
+- `Long.MAX_VALUE` 경계 오버플로 방지 및 `maxDelayMillis` 포화 처리
+- 다른 파일은 변경하지 않았습니다.

@@ -1,0 +1,6 @@
+수정 완료했습니다.
+
+- `sign(secret, null)` → `IllegalArgumentException`
+- `verify(secret, null, suppliedHex)` → `false`
+- 그 외 요구된 HMAC-SHA256 및 constant-time 비교 동작 유지
+- 대상 파일만 수정했습니다.

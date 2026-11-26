@@ -1,0 +1,10 @@
+구현 완료했습니다.
+
+- UTF-8 기반 HMAC-SHA256 서명
+- 소문자 64자리 hex 반환
+- `secret` null/empty 시 `IllegalArgumentException`
+- null payload는 빈 문자열로 처리
+- 대소문자 hex 검증 지원
+- 형식 오류는 `false`
+- `MessageDigest.isEqual`을 사용한 constant-time 비교
+- 대상 파일만 변경했습니다: [WebhookSignatureVerifier.java](C:/Users/user/Desktop/pg-payment-settlement-master/.real-ab-workspaces-0I0fts/T4/harness/src/main/java/com/toss/cashback/infrastructure/webhook/WebhookSignatureVerifier.java)

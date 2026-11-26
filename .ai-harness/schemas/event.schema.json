@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI Harness Audit Event",
+  "type": "object",
+  "required": ["version", "traceId", "spanId", "sequence", "timestamp", "type", "payload", "previousHash", "eventHash"],
+  "properties": {
+    "version": { "type": "integer" },
+    "traceId": { "type": "string" },
+    "spanId": { "type": "string" },
+    "sequence": { "type": "integer", "minimum": 1 },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "type": { "type": "string" },
+    "payload": { "type": "object" },
+    "previousHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "eventHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+  }
+}

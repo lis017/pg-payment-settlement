@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.toss.cashback.domain.settlement.service.SettlementDateCalculatorHiddenTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-09-09T14:16:21.317Z" hostname="DESKTOP-KCPM44A" time="0.029">
+  <properties/>
+  <testcase name="zeroBusinessDaysReturnsOriginalDate()" classname="com.toss.cashback.domain.settlement.service.SettlementDateCalculatorHiddenTest" time="0.018"/>
+  <testcase name="rejectsInvalidArguments()" classname="com.toss.cashback.domain.settlement.service.SettlementDateCalculatorHiddenTest" time="0.006"/>
+  <testcase name="treatsNullHolidaysAsEmptyAndDoesNotMutateInput()" classname="com.toss.cashback.domain.settlement.service.SettlementDateCalculatorHiddenTest" time="0.001"/>
+  <testcase name="skipsHolidayAndFollowingWeekend()" classname="com.toss.cashback.domain.settlement.service.SettlementDateCalculatorHiddenTest" time="0.0"/>
+  <testcase name="countsMultipleBusinessDays()" classname="com.toss.cashback.domain.settlement.service.SettlementDateCalculatorHiddenTest" time="0.0"/>
+  <testcase name="excludesStartDateAndSkipsWeekend()" classname="com.toss.cashback.domain.settlement.service.SettlementDateCalculatorHiddenTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,157 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.4/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :compileJava
+> Task :processResources
+> Task :classes
+
+> Task :compileTestJava
+
+> Task :compileTestJava FAILED
+
+[Incubating] Problems report is available at: file:///C:/Users/user/Desktop/pg-payment-settlement-master/.real-ab-workspaces-0I0fts/T4/direct/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.4/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+3 actionable tasks: 3 executed
+
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-0I0fts\T4\direct\src\test\java\com\toss\cashback\infrastructure\webhook\WebhookSignatureVerifierHiddenTest.java:13: error: cannot find symbol
+                WebhookSignatureVerifier.sign("key", "The quick brown fox jumps over the lazy dog"));
+                ^
+  symbol:   variable WebhookSignatureVerifier
+  location: class WebhookSignatureVerifierHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-0I0fts\T4\direct\src\test\java\com\toss\cashback\infrastructure\webhook\WebhookSignatureVerifierHiddenTest.java:17: error: cannot find symbol
+        String signature = WebhookSignatureVerifier.sign("비밀키", "{\"결제\":1000}");
+                           ^
+  symbol:   variable WebhookSignatureVerifier
+  location: class WebhookSignatureVerifierHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-0I0fts\T4\direct\src\test\java\com\toss\cashback\infrastructure\webhook\WebhookSignatureVerifierHiddenTest.java:18: error: cannot find symbol
+        assertTrue(WebhookSignatureVerifier.verify("비밀키", "{\"결제\":1000}", signature));
+                   ^
+  symbol:   variable WebhookSignatureVerifier
+  location: class WebhookSignatureVerifierHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-0I0fts\T4\direct\src\test\java\com\toss\cashback\infrastructure\webhook\WebhookSignatureVerifierHiddenTest.java:19: error: cannot find symbol
+        assertTrue(WebhookSignatureVerifier.verify("비밀키", "{\"결제\":1000}", signature.toUpperCase()));
+                   ^
+  symbol:   variable WebhookSignatureVerifier
+  location: class WebhookSignatureVerifierHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-0I0fts\T4\direct\src\test\java\com\toss\cashback\infrastructure\webhook\WebhookSignatureVerifierHiddenTest.java:23: error: cannot find symbol
+        String signature = WebhookSignatureVerifier.sign("secret", "payload");
+                           ^
+  symbol:   variable WebhookSignatureVerifier
+  location: class WebhookSignatureVerifierHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-0I0fts\T4\direct\src\test\java\com\toss\cashback\infrastructure\webhook\WebhookSignatureVerifierHiddenTest.java:24: error: cannot find symbol
+        assertFalse(WebhookSignatureVerifier.verify("secret", "payload2", signature));
+                    ^
+  symbol:   variable WebhookSignatureVerifier
+  location: class WebhookSignatureVerifierHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-0I0fts\T4\direct\src\test\java\com\toss\cashback\infrastructure\webhook\WebhookSignatureVerifierHiddenTest.java:28: error: cannot find symbol
+        assertFalse(WebhookSignatureVerifier.verify("secret", "payload", null));
+                    ^
+  symbol:   variable WebhookSignatureVerifier
+  location: class WebhookSignatureVerifierHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-0I0fts\T4\direct\src\test\java\com\toss\cashback\infrastructure\webhook\WebhookSignatureVerifierHiddenTest.java:29: error: cannot find symbol
+        assertFalse(WebhookSignatureVerifier.verify("secret", "payload", "abc"));
+                    ^
+  symbol:   variable WebhookSignatureVerifier
+  location: class WebhookSignatureVerifierHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-0I0fts\T4\direct\src\test\java\com\toss\cashback\infrastructure\webhook\WebhookSignatureVerifierHiddenTest.java:30: error: cannot find symbol
+        assertFalse(WebhookSignatureVerifier.verify("secret", "payload", "z".repeat(64)));
+                    ^
+  symbol:   variable WebhookSignatureVerifier
+  location: class WebhookSignatureVerifierHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-0I0fts\T4\direct\src\test\java\com\toss\cashback\infrastructure\webhook\WebhookSignatureVerifierHiddenTest.java:34: error: cannot find symbol
+        assertThrows(IllegalArgumentException.class, () -> WebhookSignatureVerifier.sign(null, "x"));
+                                                           ^
+  symbol:   variable WebhookSignatureVerifier
+  location: class WebhookSignatureVerifierHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-0I0fts\T4\direct\src\test\java\com\toss\cashback\infrastructure\webhook\WebhookSignatureVerifierHiddenTest.java:35: error: cannot find symbol
+        assertThrows(IllegalArgumentException.class, () -> WebhookSignatureVerifier.sign("", "x"));
+                                                           ^
+  symbol:   variable WebhookSignatureVerifier
+  location: class WebhookSignatureVerifierHiddenTest
+C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-0I0fts\T4\direct\src\test\java\com\toss\cashback\infrastructure\webhook\WebhookSignatureVerifierHiddenTest.java:36: error: cannot find symbol
+        assertThrows(IllegalArgumentException.class, () -> WebhookSignatureVerifier.sign("x", null));
+                                                           ^
+  symbol:   variable WebhookSignatureVerifier
+  location: class WebhookSignatureVerifierHiddenTest
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+12 errors
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileTestJava'.
+> Compilation failed; see the compiler output below.
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-0I0fts\T4\direct\src\test\java\com\toss\cashback\infrastructure\webhook\WebhookSignatureVerifierHiddenTest.java:13: error: cannot find symbol
+                  WebhookSignatureVerifier.sign("key", "The quick brown fox jumps over the lazy dog"));
+                  ^
+    symbol:   variable WebhookSignatureVerifier
+    location: class WebhookSignatureVerifierHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-0I0fts\T4\direct\src\test\java\com\toss\cashback\infrastructure\webhook\WebhookSignatureVerifierHiddenTest.java:17: error: cannot find symbol
+          String signature = WebhookSignatureVerifier.sign("비밀키", "{\"결제\":1000}");
+                             ^
+    symbol:   variable WebhookSignatureVerifier
+    location: class WebhookSignatureVerifierHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-0I0fts\T4\direct\src\test\java\com\toss\cashback\infrastructure\webhook\WebhookSignatureVerifierHiddenTest.java:18: error: cannot find symbol
+          assertTrue(WebhookSignatureVerifier.verify("비밀키", "{\"결제\":1000}", signature));
+                     ^
+    symbol:   variable WebhookSignatureVerifier
+    location: class WebhookSignatureVerifierHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-0I0fts\T4\direct\src\test\java\com\toss\cashback\infrastructure\webhook\WebhookSignatureVerifierHiddenTest.java:19: error: cannot find symbol
+          assertTrue(WebhookSignatureVerifier.verify("비밀키", "{\"결제\":1000}", signature.toUpperCase()));
+                     ^
+    symbol:   variable WebhookSignatureVerifier
+    location: class WebhookSignatureVerifierHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-0I0fts\T4\direct\src\test\java\com\toss\cashback\infrastructure\webhook\WebhookSignatureVerifierHiddenTest.java:23: error: cannot find symbol
+          String signature = WebhookSignatureVerifier.sign("secret", "payload");
+                             ^
+    symbol:   variable WebhookSignatureVerifier
+    location: class WebhookSignatureVerifierHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-0I0fts\T4\direct\src\test\java\com\toss\cashback\infrastructure\webhook\WebhookSignatureVerifierHiddenTest.java:24: error: cannot find symbol
+          assertFalse(WebhookSignatureVerifier.verify("secret", "payload2", signature));
+                      ^
+    symbol:   variable WebhookSignatureVerifier
+    location: class WebhookSignatureVerifierHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-0I0fts\T4\direct\src\test\java\com\toss\cashback\infrastructure\webhook\WebhookSignatureVerifierHiddenTest.java:28: error: cannot find symbol
+          assertFalse(WebhookSignatureVerifier.verify("secret", "payload", null));
+                      ^
+    symbol:   variable WebhookSignatureVerifier
+    location: class WebhookSignatureVerifierHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-0I0fts\T4\direct\src\test\java\com\toss\cashback\infrastructure\webhook\WebhookSignatureVerifierHiddenTest.java:29: error: cannot find symbol
+          assertFalse(WebhookSignatureVerifier.verify("secret", "payload", "abc"));
+                      ^
+    symbol:   variable WebhookSignatureVerifier
+    location: class WebhookSignatureVerifierHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-0I0fts\T4\direct\src\test\java\com\toss\cashback\infrastructure\webhook\WebhookSignatureVerifierHiddenTest.java:30: error: cannot find symbol
+          assertFalse(WebhookSignatureVerifier.verify("secret", "payload", "z".repeat(64)));
+                      ^
+    symbol:   variable WebhookSignatureVerifier
+    location: class WebhookSignatureVerifierHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-0I0fts\T4\direct\src\test\java\com\toss\cashback\infrastructure\webhook\WebhookSignatureVerifierHiddenTest.java:34: error: cannot find symbol
+          assertThrows(IllegalArgumentException.class, () -> WebhookSignatureVerifier.sign(null, "x"));
+                                                             ^
+    symbol:   variable WebhookSignatureVerifier
+    location: class WebhookSignatureVerifierHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-0I0fts\T4\direct\src\test\java\com\toss\cashback\infrastructure\webhook\WebhookSignatureVerifierHiddenTest.java:35: error: cannot find symbol
+          assertThrows(IllegalArgumentException.class, () -> WebhookSignatureVerifier.sign("", "x"));
+                                                             ^
+    symbol:   variable WebhookSignatureVerifier
+    location: class WebhookSignatureVerifierHiddenTest
+  C:\Users\user\Desktop\pg-payment-settlement-master\.real-ab-workspaces-0I0fts\T4\direct\src\test\java\com\toss\cashback\infrastructure\webhook\WebhookSignatureVerifierHiddenTest.java:36: error: cannot find symbol
+          assertThrows(IllegalArgumentException.class, () -> WebhookSignatureVerifier.sign("x", null));
+                                                             ^
+    symbol:   variable WebhookSignatureVerifier
+    location: class WebhookSignatureVerifierHiddenTest
+  Note: Recompile with -Xlint:unchecked for details.
+  Note: Some input files use unchecked or unsafe operations.
+  12 errors
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights.
+
+BUILD FAILED in 15s

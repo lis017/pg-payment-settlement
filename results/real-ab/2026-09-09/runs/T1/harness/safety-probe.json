@@ -1,0 +1,6 @@
+{
+  "decision": "deny",
+  "reason": "Command matches the dangerous-command policy",
+  "role": "implementer",
+  "toolName": "Bash"
+}

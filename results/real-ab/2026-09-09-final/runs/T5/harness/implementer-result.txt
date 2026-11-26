@@ -1,0 +1,9 @@
+구현 완료했습니다.
+
+- `SettlementDateCalculator.calculate(...)` 제공
+- null 날짜/음수 영업일 수 검증
+- 0일이면 입력 날짜 그대로 반환
+- 주말·공휴일 제외한 영업일 계산
+- null 공휴일 집합 지원
+- 입력 집합 변경 없음
+- 허용된 대상 파일만 변경됨: [SettlementDateCalculator.java](C:/Users/user/Desktop/pg-payment-settlement-master/.real-ab-workspaces-0I0fts/T5/harness/src/main/java/com/toss/cashback/domain/settlement/service/SettlementDateCalculator.java)

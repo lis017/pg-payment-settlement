@@ -1,0 +1,8 @@
+구현 완료했습니다.
+
+- `SettlementAllocator.allocate(long, int)` 추가
+- 입력값 검증 및 `IllegalArgumentException`
+- 몫 기반 균등 배분과 나머지 선순위 배분
+- `Long.MAX_VALUE` 안전 처리
+- 수정 불가능한 `List<Long>` 반환
+- 대상 파일만 변경했습니다.

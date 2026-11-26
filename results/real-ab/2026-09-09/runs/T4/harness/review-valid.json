@@ -1,0 +1,13 @@
+{
+  "summary": "The implementation violates the task’s null-payload contract; the approved plan incorrectly permits it.",
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "medium",
+      "file": "src/main/java/com/toss/cashback/infrastructure/webhook/WebhookSignatureVerifier.java",
+      "line": 25,
+      "description": "sign(secret, null) signs an empty byte array instead of throwing IllegalArgumentException. The task explicitly prohibits null payloads, despite the conflicting approved plan. This also lets verify accept a null payload with an empty-payload signature.",
+      "suggestedFix": "Reject null payloads in sign with IllegalArgumentException instead of converting them to empty bytes, and return false for null payloads in verify."
+    }
+  ]
+}

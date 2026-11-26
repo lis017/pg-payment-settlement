@@ -1,0 +1,8 @@
+구현 완료했습니다.
+
+- 대상 파일: [SettlementAllocator.java](C:/Users/user/Desktop/pg-payment-settlement-master/.real-ab-workspaces-4f2ZIN/T1/harness/src/main/java/com/toss/cashback/domain/settlement/service/SettlementAllocator.java)
+- 입력 범위 검증 및 `IllegalArgumentException`
+- 오버플로 없는 몫/나머지 균등 배분
+- 앞 인덱스부터 잔액 배분
+- `List.copyOf`를 통한 수정 불가능한 반환 리스트 적용
+- 다른 파일은 변경하지 않았습니다.

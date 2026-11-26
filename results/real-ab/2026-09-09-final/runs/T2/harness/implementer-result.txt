@@ -1,0 +1,10 @@
+구현 완료했습니다.
+
+변경 파일:
+[RetryBackoffPolicy.java](C:/Users/user/Desktop/pg-payment-settlement-master/.real-ab-workspaces-0I0fts/T2/harness/src/main/java/com/toss/cashback/infrastructure/api/RetryBackoffPolicy.java)
+
+- 모든 인자 검증
+- 정수 기반 지수 백오프
+- `Long.MAX_VALUE` 포함 오버플로 방지
+- `maxDelayMillis` 포화 처리
+- 대상 파일만 변경

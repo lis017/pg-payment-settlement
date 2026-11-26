@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["summary", "allowedPaths", "steps", "risks", "tests"],
+  "properties": {
+    "summary": { "type": "string" },
+    "allowedPaths": { "type": "array", "items": { "type": "string" } },
+    "steps": { "type": "array", "items": { "type": "string" } },
+    "risks": { "type": "array", "items": { "type": "string" } },
+    "tests": { "type": "array", "items": { "type": "string" } }
+  }
+}

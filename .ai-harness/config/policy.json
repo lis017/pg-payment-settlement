@@ -1,0 +1,37 @@
+{
+  "protectedPaths": [
+    ".git/**",
+    ".env",
+    ".env.*",
+    ".ai-harness/config/**",
+    ".ai-harness/schemas/**",
+    ".claude/settings.json",
+    ".claude/hooks/**",
+    "tools/ai-harness/**"
+  ],
+  "dangerousCommandPatterns": [
+    "git\\s+reset\\s+--hard",
+    "git\\s+clean\\s+-[^\\r\\n]*f",
+    "git\\s+push\\s+[^\\r\\n]*--force",
+    "git\\s+(checkout|restore)\\s+[^\\r\\n]*\\.",
+    "(?:rm|del)\\s+[^\\r\\n]*(?:-rf|/s)",
+    "Remove-Item[^\\r\\n]*-Recurse",
+    "\\b(?:DROP|TRUNCATE)\\s+(?:DATABASE|SCHEMA|TABLE)",
+    "docker\\s+system\\s+prune",
+    "Invoke-WebRequest[^\\r\\n]*(?:token|secret|credential)",
+    "curl[^\\r\\n]*(?:token|secret|credential)"
+  ],
+  "readOnlyCommandPatterns": [
+    "^(?:rg|grep|findstr)(?:\\s|$)",
+    "^(?:Get-Content|Select-String|Get-ChildItem|Get-Item|Test-Path)(?:\\s|$)",
+    "^(?:ls|dir|pwd|tree|type)(?:\\s|$)",
+    "^git\\s+(?:status|diff|log|show|branch|rev-parse)(?:\\s|$)",
+    "^(?:java|node|npm|gradle|gradlew|\\.\\\\gradlew\\.bat)\\s+--version(?:\\s|$)"
+  ],
+  "redactedKeyPattern": "(?:password|passwd|secret|token|api[-_]?key|authorization|credential)",
+  "redactedValuePatterns": [
+    "(?:sk|ghp|github_pat|xox[baprs])-[-A-Za-z0-9_]{12,}",
+    "Bearer\\s+[A-Za-z0-9._~+/-]+=*",
+    "(?:(?:password|secret|token|api[-_]?key)\\s*[=:]\\s*)[^\\s,;]+"
+  ]
+}

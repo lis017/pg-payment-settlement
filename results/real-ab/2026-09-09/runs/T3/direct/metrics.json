@@ -1,0 +1,38 @@
+{
+  "taskId": "T3",
+  "condition": "direct",
+  "traceId": "5e0f80e7-7f06-486e-b5b7-cd499dcf9477",
+  "model": "gpt-5.6-luna",
+  "reasoningEffort": "low",
+  "implementationExitCode": 0,
+  "implementationDurationMs": 46663,
+  "totalAgentDurationMs": 46663,
+  "changedFiles": [
+    "src/main/java/com/toss/cashback/global/util/IdempotencyKeyNormalizer.java"
+  ],
+  "outOfScopeChanges": [
+    "src/main/java/com/toss/cashback/global/util/IdempotencyKeyNormalizer.java"
+  ],
+  "outOfScopeChangeCount": 1,
+  "reviewerFindingCount": 0,
+  "reviewerFindings": [],
+  "reworkCount": 0,
+  "dangerousCommandAttempts": 0,
+  "dangerousCommandsBlocked": 0,
+  "safetyProbeCount": 0,
+  "toolCalls": 4,
+  "tracedToolCalls": 4,
+  "traceCoveragePercent": 100,
+  "targetCreated": false,
+  "evaluation": {
+    "exitCode": 1,
+    "durationMs": 15922,
+    "tests": 7,
+    "passed": 0,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "residualDefects": 7,
+    "compiledAndRan": false
+  }
+}

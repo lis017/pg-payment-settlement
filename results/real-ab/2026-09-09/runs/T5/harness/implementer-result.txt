@@ -1,0 +1,11 @@
+구현 완료했습니다.
+
+변경 파일: [SettlementDateCalculator.java](C:/Users/user/Desktop/pg-payment-settlement-master/.real-ab-workspaces-4f2ZIN/T5/harness/src/main/java/com/toss/cashback/domain/settlement/service/SettlementDateCalculator.java)
+
+- null 날짜 및 음수 영업일 검증
+- 0일이면 입력 날짜 그대로 반환
+- 주말·휴일 제외
+- 시작일 제외 후 영업일 계산
+- null 휴일 집합 지원
+- 입력 집합 변경 없음
+- 대상 파일만 변경

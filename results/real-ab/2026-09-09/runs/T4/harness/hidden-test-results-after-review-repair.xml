@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.toss.cashback.infrastructure.webhook.WebhookSignatureVerifierHiddenTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-09-09T14:24:02.736Z" hostname="DESKTOP-KCPM44A" time="0.039">
+  <properties/>
+  <testcase name="verifiesValidSignatureCaseInsensitively()" classname="com.toss.cashback.infrastructure.webhook.WebhookSignatureVerifierHiddenTest" time="0.026"/>
+  <testcase name="rejectsChangedPayload()" classname="com.toss.cashback.infrastructure.webhook.WebhookSignatureVerifierHiddenTest" time="0.002"/>
+  <testcase name="usesConstantTimeComparison()" classname="com.toss.cashback.infrastructure.webhook.WebhookSignatureVerifierHiddenTest" time="0.001"/>
+  <testcase name="rejectsMalformedSignatureWithoutThrowing()" classname="com.toss.cashback.infrastructure.webhook.WebhookSignatureVerifierHiddenTest" time="0.001"/>
+  <testcase name="rejectsInvalidSigningInputs()" classname="com.toss.cashback.infrastructure.webhook.WebhookSignatureVerifierHiddenTest" time="0.003"/>
+  <testcase name="producesKnownHmacSha256Vector()" classname="com.toss.cashback.infrastructure.webhook.WebhookSignatureVerifierHiddenTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

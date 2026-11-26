@@ -1,0 +1,8 @@
+구현 완료했습니다.
+
+- 대상 파일만 추가: [IdempotencyKeyNormalizer.java](C:/Users/user/Desktop/pg-payment-settlement-master/.real-ab-workspaces-4f2ZIN/T3/harness/src/main/java/com/toss/cashback/domain/payment/service/IdempotencyKeyNormalizer.java)
+- null/blank 거부
+- 엄격한 8-4-4-4-12 UUID 형식 검증
+- version 1~5 및 RFC 4122 variant 2 검증
+- 소문자 canonical UUID 반환
+- 테스트 파일은 추가하지 않았습니다.
